@@ -151,8 +151,8 @@ namespace GitHelper
                 returnlist.Add(error.ToString());
             }
 
-            return returnlist;
             lblFeedback.Visibility = Visibility.Hidden;
+            return returnlist;
         }
 
         private void MainWindow1_Closed(object sender, System.EventArgs e)

@@ -255,18 +255,22 @@ namespace GitHelper
 
         private void BranchChange_Click(object sender, RoutedEventArgs e)
         {
+            //create a list of branches from the selected repo
             string directory = Properties.Settings.Default["selectedDir"].ToString();
             List<string> branches = Git_Results(directory, "branch");
-            string inputresult = Interaction.InputBox($"Enter the branch name from the list below: {string.Join("\n", branches)}", "Change Branch", "Branch Name");
 
-            List<string> results = Git_Results(directory, $"checkout {inputresult}");
-            
+            //ask the user for their preferred branch
+            string inputresult = Interaction.InputBox($"Enter the branch name from the list below:\n {string.Join("\n", branches)}", "Change Branch", "Branch Name");
 
-            branches = Git_Results(directory, "branch");
-
-            ReEval_Branches(branches, "*");
-
-            System.Windows.MessageBox.Show(string.Join("\n", results), "Change Branch");
+            //if the user didn't close the window and the inputresult branch is valid...
+            if (inputresult != "" && branches.Contains(inputresult))
+            {
+                //reevaluate the branches to ensure that the inputresult branch is displayed in the textbox
+                List<string> results = Git_Results(directory, $"checkout {inputresult}");
+                branches = Git_Results(directory, "branch");
+                ReEval_Branches(branches, "*");
+                System.Windows.MessageBox.Show(string.Join("\n", results), "Change Branch");
+            }
         }
 
         

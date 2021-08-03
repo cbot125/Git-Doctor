@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHelper", "GitHelper\GitHelper.csproj", "{442BDEF1-0DAC-4102-9B64-7A3DC40EC35A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{442BDEF1-0DAC-4102-9B64-7A3DC40EC35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{442BDEF1-0DAC-4102-9B64-7A3DC40EC35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{442BDEF1-0DAC-4102-9B64-7A3DC40EC35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{442BDEF1-0DAC-4102-9B64-7A3DC40EC35A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B647BF13-78E5-40BB-B59B-437309E85E3F}
+	EndGlobalSection
+EndGlobal

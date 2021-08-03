@@ -1,0 +1,39 @@
+﻿<Window x:Name="MainWindow1" x:Class="GitHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GitHelper"
+        mc:Ignorable="d"
+        Title="Git Doctor" Loaded ="MainWindow1_Loaded" Closed="MainWindow1_Closed" Height="280" Width="410" ResizeMode="CanMinimize" Icon="logogithelper.png">
+    <Grid>
+        <Button x:Name="btnPerfOp" Content="Perform Operation" Margin="274,151,0,0" IsEnabled="False" Click="btnPerfOp_Click" Height="56" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+        <ComboBox x:Name="cbDirs" Margin="10,97,0,0" SelectionChanged="cbDirs_SelectionChanged" HorizontalAlignment="Left" Width="174" Height="22" VerticalAlignment="Top"/>
+        <Label x:Name="lblOperations" Content="Operations:" Margin="10,140,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="111"/>
+        <RadioButton x:Name="rbPull" GroupName="Operations" Content="Pull" Margin="10,191,0,0" Checked="rbPull_Checked" Height="16" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38"/>
+        <RadioButton x:Name="rbPush" GroupName="Operations" Content="Push" Margin="10,171,0,0" Checked="rbPush_Checked" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45"/>
+        <RadioButton x:Name="rbThisRepo" GroupName="Scope" Content="This Repo" Margin="126,171,0,0" Checked="rbThisRepo_Checked" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
+        <RadioButton x:Name="rbAllRepos" GroupName="Scope" Content="All Repos" Margin="126,191,0,0" Checked="rbAllRepos_Checked" Height="15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
+        <Label x:Name="lblScope" Content="Scope:" Margin="126,140,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="109"/>
+        <Menu Height="20" VerticalAlignment="Top" Margin="0,0,0,0">
+            <MenuItem Header="Repo">
+                <MenuItem Header="Add...">
+                    <MenuItem Header="Local" Click="AddLocalRepo_Click"></MenuItem>
+                    <MenuItem Header="Remote" Click="AddRemoteRepo_Click"></MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Branch">
+                <MenuItem Header="General..." Click="General_Click"></MenuItem>
+                <MenuItem Header="Remote..." Click="Remote_Click"></MenuItem>
+                <MenuItem Header="Add" Click="AddBranch_Click"></MenuItem>
+                <MenuItem Header="Change" Click="BranchChange_Click"></MenuItem>
+                <MenuItem Header="Delete" Click="DeleteBranch_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBox x:Name="tbBranches" HorizontalAlignment="Left" Margin="210,97,0,0" VerticalAlignment="Top" Width="174" IsReadOnly="True" Height="22" IsEnabled="False"/>
+        <Label Content="Repo Directory:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="Branch:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,66,0,0"/>
+        <Label x:Name="lblFeedback" Content="Some repos take a while to clone. Please wait..." HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+
+    </Grid>
+</Window>

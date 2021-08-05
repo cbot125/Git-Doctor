@@ -263,7 +263,7 @@ namespace GitHelper
             string inputresult = Interaction.InputBox($"Enter the branch name from the list below:\n {string.Join("\n", branches)}", "Change Branch", "Branch Name");
 
             //if the user didn't close the window and the inputresult branch is valid...
-            if (inputresult != "" && branches.Contains(inputresult))
+            if (inputresult != "")
             {
                 //reevaluate the branches to ensure that the inputresult branch is displayed in the textbox
                 List<string> results = Git_Results(directory, $"checkout {inputresult}");
